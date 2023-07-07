@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import List from "./components/List";
+import Grid from "./components/Grid";
+import EditableButton from "./components/EditableButton";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const controls = [
+    { label: "safe zone", id: "1" },
+    { label: "barrier", id: "2" },
+    { label: "radioactive zone", id: "3" },
+    { label: "delete", id: "4" },
+  ];
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="flex-container">
+        <div>
+          <Grid></Grid>
+        </div>
+        <div>
+          <div>
+            <List groupTitle="drawing controls" items={controls}></List>
+            <ul>
+              <p><b>grid controls</b></p>
+
+              <EditableButton initialText={"12"}></EditableButton>
+              <EditableButton initialText={"15"}></EditableButton>
+            </ul>
+          </div>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
