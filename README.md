@@ -1,3 +1,3 @@
-# react-ui
+# react-ui-template
 
-Starting with the template vite@latest project
+Fork this repo alongside a python-service-template for a complete new app start!
